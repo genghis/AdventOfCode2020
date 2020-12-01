@@ -1,6 +1,6 @@
 import os
 import itertools
-
+	
 input_list = [int(x) for x in open('input.txt', 'r')]
 
 pairs = set((x,y) for x,y in itertools.combinations(input_list, 2))
