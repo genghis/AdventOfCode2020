@@ -5,6 +5,11 @@ input_list = [int(x) for x in open('input.txt', 'r')]
 
 trios = set((x,y,z) for x,y,z in itertools.combinations(input_list, 3))
 
-for i in trios:
-	if i[0]+i[1]+i[2] == 2020:
-		print(f"{i[0]} + {i[1]} + {i[2]} = 2020\n{i[0]} x {i[1]} x {i[2]}= {i[0]*i[1]*i[2]}")
+def check_2020(trio):
+	if sum(trio) == 2020:
+		return True
+	else:
+		return False
+
+solution = list(filter(check_2020, trios))[0]
+print(f"{solution[0]} + {solution[1]} + {solution[2]} = 2020\n{solution[0]} x {solution[1]} x {solution[2]}= {solution[0]*solution[1]*solution[2]}")
