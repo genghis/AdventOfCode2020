@@ -3,7 +3,7 @@ import itertools
 
 input_list = [int(x) for x in open('input.txt', 'r')]
 
-trios = set((x,y,z) for x,y,z in itertools.combinations(input_list, 3))
+trios = {(x,y,z) for x,y,z in itertools.combinations(input_list, 3)}
 
 solution = list(filter(lambda x: sum(x) == 2020, trios))[0]
 
