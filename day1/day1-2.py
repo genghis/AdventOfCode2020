@@ -3,7 +3,7 @@ import itertools
 
 input_list = [int(x) for x in open('input.txt', 'r')]
 
-trios = set((sorted((x,y,z))[0],sorted((x,y,z))[1],sorted((x,y,z))[2]) for x,y,z in itertools.product(input_list, input_list, input_list))
+trios = set((x,y,z) for x,y,z in itertools.combinations(input_list, 3))
 
 for i in trios:
 	if i[0]+i[1]+i[2] == 2020:
