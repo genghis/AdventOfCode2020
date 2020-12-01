@@ -3,7 +3,7 @@ import itertools
 
 input_list = [int(x) for x in open('input.txt', 'r')]
 
-pairs = set((max(x,y),min(x,y)) for x,y in itertools.product(input_list, input_list))
+pairs = set((x,y) for x,y in itertools.combinations(input_list, 2))
 
 for i in pairs:
 	if i[0]+i[1] == 2020:
