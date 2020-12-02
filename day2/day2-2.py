@@ -2,8 +2,6 @@ import os
 
 input_list = [x.strip().replace(':','').split(' ') for x in open('./input.txt')]
 
-valid_count = 0
-
 def check(payload):
 	matches = 0
 	numbers = payload[0].split('-')

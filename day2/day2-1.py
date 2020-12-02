@@ -1,18 +1,13 @@
 import os
 
-input_list = [x.strip() for x in open('./input.txt')]
+input_list = [x.strip().replace(':','').split(' ') for x in open('./input.txt')]
 
-valid_count = 0
+def check(payload):
+	numbers = payload[0].split('-')
+	minimum,maximum,letter,password = int(numbers[0]), int(numbers[1]),payload[1],payload[2]
+	if password.count(letter) >= minimum and password.count(letter) <= maximum:
+		return True
+	else:
+		return False
 
-for i in input_list:
-	ituple= i.split(' ')
-	number_range = ituple[0].split('-')
-	minimum = int(number_range[0])
-	maximum = int(number_range[1])
-	letter = ituple[1][0]
-	password = ituple[2]
-	total = password.count(letter)
-	if total >= minimum and total <= maximum:
-		valid_count += 1
-
-print(valid_count)
+print(len(list(filter(check,input_list))))
