@@ -1,6 +1,5 @@
 input_list = [x.strip() for x in open('./input.txt')]
 input_list.append('')
-input_list.insert(0, '')
 empty_lines = []
 passport_list = []
 valid_passports = 0
@@ -21,8 +20,8 @@ def create_passports(empty_line_list):
 	current_place = 0
 	for i in empty_line_list:
 		current_place = i
-		passport_list.append(input_list[previous_place+1:current_place])
-		previous_place = current_place
+		passport_list.append(input_list[previous_place:current_place])
+		previous_place = current_place+1
 
 def validate_passport(passport):
 	passport_string = ' '.join(passport)
