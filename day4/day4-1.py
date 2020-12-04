@@ -37,5 +37,4 @@ def validate_passport(passport):
 
 chopped_list(input_list)
 create_passports(empty_lines)
-print(empty_lines)
 print(len(list(filter(validate_passport, passport_list))))
