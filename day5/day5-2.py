@@ -20,6 +20,7 @@ def find_my_seat(pair):
 
 seat_numbers = list(enumerate(sorted([x for x in map(mathing, input_list)], reverse=True)))
 
+#The my_seat math is because I am an idiot and tried to use the number that gave a True in find_my_seat, instead of the missing number
 my_seat = list(filter(find_my_seat, seat_numbers))[0][1]-1
 
 print(my_seat)
