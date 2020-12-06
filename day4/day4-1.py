@@ -26,7 +26,6 @@ def create_passports(empty_line_list):
 def validate_passport(passport):
 	passport_string = ' '.join(passport)
 	smashport = passport_string.split(' ')
-	print(smashport)
 	if len(smashport) == 8:
 		return True
 	elif len(smashport) == 7 and "cid:" not in passport_string:

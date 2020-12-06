@@ -1,0 +1,32 @@
+input_list = [x.strip() for x in open('./input.txt')]
+input_list.append('')
+empty_lines = []
+group_answer_list = []
+list_of_sets = []
+total = 0
+
+def chopped_list(mis_en_place):
+	current_line = 0
+	for i in mis_en_place:
+		if i == '':
+			empty_lines.append(current_line)
+			current_line += 1
+			pass
+		else:
+			current_line += 1
+			pass
+
+def create_groups(empty_line_list):
+	previous_place = 0
+	current_place = 0
+	for i in empty_line_list:
+		global total
+		current_place = i
+		temp_list = input_list[previous_place:current_place]
+		temp_set = {x for x in str(temp_list) if x in "abcdefghijklmnopqrstuvwxyz"}
+		total += len(temp_set)
+		previous_place = current_place+1
+
+chopped_list(input_list)
+create_groups(empty_lines)
+print(total)
