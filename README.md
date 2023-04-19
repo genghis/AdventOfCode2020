@@ -1,2 +1,2 @@
 # AdventOfCode2020
-Back on my terrible Python bullshit
+Back on my terrible Python nonsense
